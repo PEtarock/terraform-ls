@@ -484,18 +484,50 @@ var testModuleSchemaOutput = `{
 	}
   },
   "resource_schemas": {
-	"test_resource_1": {
-	  "version": 0,
-	  "block": {
-		"description": "Resource 1 description",
-		"description_kind": "markdown",
-		"attributes": {
-		  "deprecated_attr": {
-			"deprecated": true
+		"test_resource_1": {
+		  "version": 0,
+		  "block": {
+				"description": "Resource 1 description",
+				"description_kind": "markdown",
+				"attributes": {
+				  "deprecated_attr": {
+					"deprecated": true
+				  }
+				}
+		  }
+		},
+		"test_resource_2": {
+		  "version": 0,
+		  "block": {
+				"description": "Resource 2 description",
+				"description_kind": "markdown",
+				"attributes": {
+				  "deprecated_attr": {
+					"deprecated": true
+				  }
+				},
+				"block_types": {
+          "setting": {
+            "nesting_mode": "set",
+            "block": {
+              "attributes": {
+                "name": {
+                  "type": "string",
+                  "description_kind": "plain",
+                  "required": true
+                },
+                "value": {
+                  "type": "string",
+                  "description_kind": "plain",
+                  "required": true
+                }
+              },
+              "description_kind": "plain"
+            }
+          }
+        }
 		  }
 		}
-	  }
-	}
   }
 }`
 
